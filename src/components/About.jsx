@@ -23,11 +23,19 @@ export default function About() {
         <div className="rounded-2xl border border-border bg-surface p-6">
           <p className="mb-3 text-sm font-semibold text-text">Quick facts</p>
           <ul className="space-y-2 text-sm text-muted">
-            <li>
-              <span className="text-accent-2">Based in</span> — {profile.location}
-            </li>
+            {profile.location && (
+              <li>
+                <span className="text-accent-2">Based in</span> — {profile.location}
+              </li>
+            )}
             <li>
               <span className="text-accent-2">Role</span> — {profile.title}
+            </li>
+            <li>
+              <span className="text-accent-2">Email</span> —{' '}
+              <a href={`mailto:${profile.email}`} className="hover:text-accent">
+                {profile.email}
+              </a>
             </li>
             {profile.resumeUrl && (
               <li>

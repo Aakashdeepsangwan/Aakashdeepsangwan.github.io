@@ -17,17 +17,23 @@ export default function Skills() {
             transition={{ duration: 0.4, delay: i * 0.06 }}
             className="rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent/50"
           >
-            <p className="mb-4 font-mono text-sm text-accent-2">{group.category}</p>
-            <div className="flex flex-wrap gap-2">
-              {group.items.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-border bg-surface-2 px-3 py-1 text-xs text-muted"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
+            {group.items.length > 0 ? (
+              <>
+                <p className="mb-4 font-mono text-sm text-accent-2">{group.category}</p>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-border bg-surface-2 px-3 py-1 text-xs text-muted"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <p className="font-mono text-sm text-text">{group.category}</p>
+            )}
           </motion.div>
         ))}
       </div>
