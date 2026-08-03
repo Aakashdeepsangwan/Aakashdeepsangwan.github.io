@@ -7,7 +7,7 @@ import SectionHeading from './SectionHeading';
 export default function Projects() {
   return (
     <section id="projects" className="section-container py-24">
-      <SectionHeading index="03" title="Projects" />
+      <SectionHeading index="04" title="Projects" />
 
       <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((project, i) => (
@@ -37,9 +37,20 @@ export default function Projects() {
               </div>
             </div>
 
-            <p className="mb-6 flex-1 text-sm text-muted">{project.description}</p>
+            <p className="mb-4 text-sm text-muted">{project.description}</p>
 
-            <div className="flex flex-wrap gap-2">
+            {project.highlights && project.highlights.length > 0 && (
+              <ul className="mb-6 space-y-1.5 text-sm text-muted">
+                {project.highlights.map((h, idx) => (
+                  <li key={idx} className="flex gap-2">
+                    <span className="mt-1.5 h-1 w-1 flex-none rounded-full bg-accent" />
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <div className="mt-auto flex flex-wrap gap-2">
               {project.tech.map((t) => (
                 <span
                   key={t}

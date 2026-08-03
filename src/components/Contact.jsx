@@ -13,7 +13,7 @@ const socialIcons = [
 export default function Contact() {
   return (
     <section id="contact" className="section-container py-24 text-center">
-      <SectionHeading index="04" title="Get In Touch" />
+      <SectionHeading index="05" title="Get In Touch" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
